@@ -1,4 +1,4 @@
-# Backend de Autenticación y Gestión de Productos
+# Backend de Autenticación y Gestión de Productos.
 
 Este proyecto es un ejemplo de aplicación backend utilizando Node.js, Express.js, MongoDB y JWT para manejar la autenticación y autorización de usuarios, así como las operaciones CRUD para un modelo de productos (en este caso, videojuegos).
 
@@ -11,48 +11,47 @@ Este proyecto es un ejemplo de aplicación backend utilizando Node.js, Express.j
 ## Configuración del Proyecto
 
 1. Clona el repositorio.
-   
-   ```bash
-   git clone https://github.com/Kok3oficial/aplicacion-backend-autenticacion.git
+    ```git clone https://github.com/Kok3oficial/aplicacion-backend-autenticacion.git ```
 
-2. Navega al directorio.
+2. Navega al directorio del proyecto.
 
-   ```bash
-   cd plicacion-backend-autenticacion
+  ``` aplicacion-backend-autenticacion```
 
 3. Instala las dependencias.
 
-   ```bash
-    npm install
+    ``` npm install ``` 
 
 4. Configura las variables de entorno en un archivo .env.
 
-   ```plaintext
-    PORT=3000
-    MONGODB_URI=tu_mongodb_uri
-    JWT_SECRET=tu_secreto_para_jwt
 
+       PORT=3000
+       MONGODB_URI=tu_mongodb_uri
+       JWT_SECRET=tu_secreto_para_jwt
+    
 
-5. Iniciar el servidor.
+5. Inicia el servidor.
 
-   ```bash
-   npm start
+   ```npm start```
 
-Rutas y Endpoints
-Rutas de Usuario
-POST /api/user/register: Registra un nuevo usuario.
-POST /api/user/login: Inicia sesión de un usuario.
-GET /api/user/verifytoken: Verifica la autenticación del usuario.
-PUT /api/user/update: Actualiza la información del usuario.
-Rutas de Producto
-POST /api/product/create: Crea un nuevo producto.
-GET /api/product/readall: Obtiene todos los productos.
-GET /api/product/readone/:id: Obtiene un producto específico por su ID.
-PUT /api/product/update/:id: Actualiza un producto específico.
-DELETE /api/product/delete/:id: Elimina un producto específico.
-Despliegue
-Este proyecto se puede desplegar fácilmente en render.com y MongoDB Atlas.
+ ## Rutas y Endpoints
+ ## Rutas de Usuario
+ ``` 
+    POST /api/user/register: Registra un nuevo usuario.
+    POST /api/user/login: Inicia sesión de un usuario.
+    GET /api/user/verifytoken: Verifica la autenticación del usuario.
+    PUT /api/user/update: Actualiza la información del usuario. ``` 
 
-Crea una cuenta en render.com.
-Conecta tu repositorio a render.com y despliega la aplicación.
-Configura MongoDB Atlas y añade la URI a las variables de entorno en render.com.
+ ## Rutas de Producto
+```
+    POST /api/product/create: Crea un nuevo producto.
+    GET /api/product/readall: Obtiene todos los productos.
+    GET /api/product/readone/:id: Obtiene un producto específico por su ID.
+    PUT /api/product/update/:id: Actualiza un producto específico.
+    DELETE /api/product/delete/:id: Elimina un producto específico.```
+
+ ## Despliegue
+    Este proyecto se puede desplegar fácilmente en render.com y MongoDB Atlas.
+
+ ## Crea una cuenta en render.com.
+    Conecta tu repositorio a render.com y despliega la aplicación.
+    Configura MongoDB Atlas y añade la URI a las variables de entorno en render.com
