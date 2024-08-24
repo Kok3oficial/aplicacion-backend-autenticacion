@@ -1,9 +1,6 @@
-# Backend de Autenticación y Gestión de Productos.
-
+# Backend de Autenticación y Gestión de Productos
 Este proyecto es un ejemplo de aplicación backend utilizando Node.js, Express.js, MongoDB y JWT para manejar la autenticación y autorización de usuarios, así como las operaciones CRUD para un modelo de productos (en este caso, videojuegos).
-
 ## Requisitos Previos
-
 - Node.js instalado
 - MongoDB Atlas configurado
 - npm (Node Package Manager) instalado
@@ -11,41 +8,41 @@ Este proyecto es un ejemplo de aplicación backend utilizando Node.js, Express.j
 ## Configuración del Proyecto
 
 1. Clona el repositorio.
-   
-   ```bash
+   ```
    git clone https://github.com/Kok3oficial/aplicacion-backend-autenticacion.git
+   ```
 
 2. Navega al directorio del proyecto.
 
-   ```bash
+   ```
    cd aplicacion-backend-autenticacion
+   ```
 
 3. Instala las dependencias.
 
-   ```bash
+   ```
    npm install
+   ```
 
 4. Configura las variables de entorno en un archivo .env.
 
-   ```bash
+   ```json
    PORT=3000
    MONGODB_URI=tu_mongodb_uri
    JWT_SECRET=tu_secreto_para_jwt
 
-5. Inicia el servidor.
-
-   ```bash
-   npm start
+5. Inicia el servidor `npm start`
 
  ## Rutas y Endpoints
  ## Rutas de Usuario
-
+   ```json
     POST /api/user/register: Registra un nuevo usuario.
     POST /api/user/login: Inicia sesión de un usuario.
     GET /api/user/verifytoken: Verifica la autenticación del usuario.
     PUT /api/user/update: Actualiza la información del usuario.
 
  ## Rutas de Producto
+   ```json
     POST /api/product/create: Crea un nuevo producto.
     GET /api/product/readall: Obtiene todos los productos.
     GET /api/product/readone/:id: Obtiene un producto específico por su ID.
