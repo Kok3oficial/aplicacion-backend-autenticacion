@@ -1,63 +1,182 @@
-# Backend de Autenticación y Gestión de Productos
-Este proyecto es un ejemplo de aplicación backend utilizando Node.js, Express.js, MongoDB y JWT para manejar la autenticación y autorización de usuarios, así como las operaciones CRUD para un modelo de productos (en este caso, videojuegos).
-## Requisitos Previos
-- Node.js instalado
-- MongoDB Atlas configurado
-- npm (Node Package Manager) instalado
+# Aplicación Backend con Autenticación y CRUD de Videojuegos
 
-## Configuración del Proyecto
+Este proyecto es una aplicación backend que gestiona la autenticación de usuarios y permite la gestión de productos (videojuegos) a través de operaciones CRUD. Está construida utilizando Node.js, Express.js, MongoDB, y JWT (JSON Web Tokens) para la autenticación.
 
-1. Clona el repositorio.
-   ```
-   git clone https://github.com/Kok3oficial/aplicacion-backend-autenticacion.git
-   ```
-    ```git clone https://github.com/Kok3oficial/aplicacion-backend-autenticacion.git ```
+## Requisitos
 
-2. Navega al directorio del proyecto.
+- Node.js
+- MongoDB (MongoDB Atlas o una instalación local)
+- Postman o Thunder Client para probar las APIs
 
-  ``` aplicacion-backend-autenticacion```
-   ```
-   cd aplicacion-backend-autenticacion
-   ```
+## Instalación
 
-3. Instala las dependencias.
+1. Clona el repositorio:
 
-    ``` npm install ``` 
-   ```
-   npm install
-   ```
+   ```bash
+   git clone https://github.com/Kok3oficial/aplicacion-backend-autenticacion.git```
 
-4. Configura las variables de entorno en un archivo .env.
+2. Navega al directorio del proyecto:
 
-
-       PORT=3000
-       MONGODB_URI=tu_mongodb_uri
-       JWT_SECRET=tu_secreto_para_jwt
-    
-
-5. Inicia el servidor.
-
-   ```npm start```
-
- ## Rutas y Endpoints
- ## Rutas de Usuario
- ``` 
-    POST /api/user/register: Registra un nuevo usuario.
-    POST /api/user/login: Inicia sesión de un usuario.
-    GET /api/user/verifytoken: Verifica la autenticación del usuario.
-    PUT /api/user/update: Actualiza la información del usuario. ``` 
-
- ## Rutas de Producto
+bash
 ```
-    POST /api/product/create: Crea un nuevo producto.
-    GET /api/product/readall: Obtiene todos los productos.
-    GET /api/product/readone/:id: Obtiene un producto específico por su ID.
-    PUT /api/product/update/:id: Actualiza un producto específico.
-    DELETE /api/product/delete/:id: Elimina un producto específico.```
+cd aplicacion-backend-autenticacion```
+3. Instala las dependencias:
 
- ## Despliegue
-    Este proyecto se puede desplegar fácilmente en render.com y MongoDB Atlas.
+bash
 
- ## Crea una cuenta en render.com.
-    Conecta tu repositorio a render.com y despliega la aplicación.
-    Configura MongoDB Atlas y añade la URI a las variables de entorno en render.com
+```npm install```
+
+4. Crea un archivo .env en la raíz del proyecto y configura las siguientes variables de entorno:
+
+bash
+```
+PORT=3000
+MONGO_URI=<tu-URI-de-MongoDB>
+JWT_SECRET=<tu-secreto-JWT>```
+
+## Uso
+1. Inicia el servidor:
+
+bash
+```
+npm start```
+El servidor debería estar corriendo en http://localhost:3000.
+
+Endpoints
+Autenticación de Usuario
+Registrar un usuario
+
+Método: POST
+
+Endpoint: /api/user/register
+
+Descripción: Permite a un usuario registrarse en la plataforma.
+
+Ejemplo de Body:
+
+json```
+
+{
+  "nombre": "John Doe",
+  "correo": "johndoe@example.com",
+  "password": "password123"
+}
+```
+
+Iniciar sesión
+
+Método: POST
+
+Endpoint: /api/user/login
+
+Descripción: Permite a un usuario iniciar sesión.
+
+Ejemplo de Body:
+
+json```
+Copiar código
+{
+  "correo": "johndoe@example.com",
+  "password": "password123"
+}```
+Verificar Token
+
+Método: GET
+Endpoint: /api/user/verifytoken
+Descripción: Verifica la validez de un token JWT.
+Actualizar Información del Usuario
+
+Método: PUT
+
+Endpoint: /api/user/update
+
+Descripción: Actualiza la información del usuario.
+
+Ejemplo de Body:
+
+json```
+Copiar código
+{
+  "nombre": "John Doe",
+  "correo": "johndoe@example.com",
+  "password": "newpassword123"
+}```
+Gestión de Productos (Videojuegos)
+Crear un videojuego
+
+Método: POST
+
+Endpoint: /api/product/create
+
+Descripción: Agrega un nuevo videojuego al catálogo.
+
+Ejemplo de Body:
+
+json```
+Copiar código
+{
+  "nombre": "The Legend of Zelda",
+  "descripcion": "Aventura y exploración en un mundo abierto",
+  "precio": 59.99
+}```
+Leer todos los videojuegos
+
+Método: GET
+Endpoint: /api/product/readall
+Descripción: Obtiene una lista de todos los videojuegos.
+Leer un videojuego específico
+
+Método: GET
+Endpoint: /api/product/readone/:id
+Descripción: Obtiene los detalles de un videojuego específico por ID.
+Actualizar un videojuego
+
+Método: PUT
+
+Endpoint: /api/product/update/:id
+
+Descripción: Actualiza los detalles de un videojuego.
+
+Ejemplo de Body:
+
+json```
+Copiar código
+{
+  "nombre": "Super Mario Odyssey",
+  "descripcion": "Un juego de plataformas en 3D con Mario",
+  "precio": 49.99
+}```
+
+Eliminar un videojuego
+
+Método: DELETE
+Endpoint: /api/product/delete/:id
+Descripción: Elimina un videojuego del catálogo.
+
+Estructura del Proyecto.
+```
+├── .env
+├── .gitignore
+├── README.md
+├── controllers
+│   ├── userController.js
+│   └── productController.js
+├── models
+│   ├── userModel.js
+│   └── productModel.js
+├── routes
+│   ├── userRoutes.js
+│   └── productRoutes.js
+└── server.js```
+
+Tecnologías Utilizadas
+
+Node.js
+Express.js
+MongoDB
+Mongoose
+JWT (JSON Web Tokens)
+CORS
+dotenv
+Despliegue
+El proyecto se puede desplegar en Render y se puede utilizar MongoDB Atlas como base de datos en la nube.
